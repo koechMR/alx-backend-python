@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-""" Module for testing client """
+""" Module for testing client test """
 
 from client import GithubOrgClient
 from fixtures import TEST_PAYLOAD
@@ -50,7 +50,7 @@ class TestGithubOrgClient(unittest.TestCase):
             test_class = GithubOrgClient('test')
             result = test_class.public_repos()
 
-            check = [i["name"] for i in json_payload]
+            check = [x["name"] for x in json_payload]
             self.assertEqual(result, check)
 
             mock_public.assert_called_once()
